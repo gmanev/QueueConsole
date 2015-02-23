@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0" name="queueconsole-${pom.version}">
+
+    <feature name="queueconsole" version="${pom.version}">
+    	<feature>camel-cxf</feature>
+        <feature>vaadin-bridge</feature>
+        <feature>pbxevents-model</feature>    	
+        <bundle>mvn:com.jjinterna.queueconsole/queueconsole-vaadin/${pom.version}</bundle>        
+    </feature>
+
+</features>
