@@ -12,7 +12,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <pbxevents.version>1.0.0-SNAPSHOT</pbxevents.version>	
         <cxf.version>2.7.13</cxf.version>
-        <camel.version>2.15-SNAPSHOT</camel.version>        
         <log4j-version>1.2.16</log4j-version>
         <slf4j-version>1.6.1</slf4j-version>		
 	</properties>

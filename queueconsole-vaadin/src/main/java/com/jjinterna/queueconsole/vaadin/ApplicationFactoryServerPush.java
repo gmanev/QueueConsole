@@ -3,11 +3,11 @@ package com.jjinterna.queueconsole.vaadin;
 import com.jjinterna.vaadin.vaadinbridge.ApplicationFactory;
 import com.vaadin.ui.UI;
 
-public class ApplicationFactoryImpl implements ApplicationFactory {
+public class ApplicationFactoryServerPush implements ApplicationFactory {
 
 	String imageURL, callerURL, title;
 	
-	public ApplicationFactoryImpl(String title, String imageURL, String callerURL) {
+	public ApplicationFactoryServerPush(String title, String imageURL, String callerURL) {
 		if (!"".equals(imageURL)) {
 			this.imageURL = imageURL;
 		}
@@ -19,12 +19,13 @@ public class ApplicationFactoryImpl implements ApplicationFactory {
 
 	@Override
 	public UI getInstance() {
-		return new UIImpl(title, imageURL, callerURL);
+		return new UIServerPush(title, imageURL, callerURL);
 	}
 
 	@Override
 	public Class<? extends UI> getUIClass() {
-		return UIImpl.class;
+		return UIServerPush.class;
 	}
+
 
 }

@@ -15,7 +15,6 @@
         <cm:default-properties>
             <cm:property name="imageURL" value=""/>
             <cm:property name="callerURL" value=""/>
-            <cm:property name="serverPush" value="true"/>            
         </cm:default-properties>
     </cm:property-placeholder>
  
@@ -31,12 +30,23 @@
 		<argument value="QueueConsole ${project.version}"/>
     	<argument value="${imageURL}"/>
     	<argument value="${callerURL}"/>
-    	<argument value="${serverPush}"/>    	
 	</bean>
 
 	<service ref="appFactory" interface="com.jjinterna.vaadin.vaadinbridge.ApplicationFactory">
 		<service-properties>
 			<entry key="alias" value="/queueconsole" />
+		</service-properties>
+	</service>
+
+	<bean id="appFactoryServerPush" class="com.jjinterna.queueconsole.vaadin.ApplicationFactoryServerPush">
+		<argument value="QueueConsole ${project.version}"/>
+    	<argument value="${imageURL}"/>
+    	<argument value="${callerURL}"/>
+	</bean>
+
+	<service ref="appFactoryServerPush" interface="com.jjinterna.vaadin.vaadinbridge.ApplicationFactory">
+		<service-properties>
+			<entry key="alias" value="/queueconsole-serverpush" />
 		</service-properties>
 	</service>
 

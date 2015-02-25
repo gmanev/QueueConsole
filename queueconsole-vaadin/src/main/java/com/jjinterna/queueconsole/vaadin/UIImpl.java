@@ -31,10 +31,9 @@ public class UIImpl extends UI {
 	int step;
 
 	String imageURL, callerURL, title;
-	Boolean serverPush;
 	Calls calls = Webservice.calls;
 	
-	public UIImpl(String title, String imageURL, String callerURL, Boolean serverPush) {
+	public UIImpl(String title, String imageURL, String callerURL) {
 		this.imageURL = imageURL;
 		this.callerURL = callerURL;
 		this.title = title;

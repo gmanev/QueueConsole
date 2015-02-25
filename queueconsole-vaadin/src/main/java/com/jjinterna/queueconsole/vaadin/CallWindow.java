@@ -26,6 +26,7 @@ public class CallWindow extends Window {
 
 	private PBXCallQueueEvent call;
 	private String callerURL;
+	private boolean showTimers = true;
 
 	public CallWindow() {
 		dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -52,6 +53,10 @@ public class CallWindow extends Window {
 
 	public void setCallerURL(String callerURL) {
 		this.callerURL = callerURL;
+	}
+
+	public void setShowTimers(boolean showTimers) {
+		this.showTimers = showTimers;
 	}
 
 	public void updateTimers() {
@@ -105,7 +110,9 @@ public class CallWindow extends Window {
 					(call.getAgent() != null ? call.getAgent() : ""));
 		}
 
-		updateTimers();
+		if (showTimers) {
+			updateTimers();
+		}
 	}
 
 }
